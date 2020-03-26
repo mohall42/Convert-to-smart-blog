@@ -1,7 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Footer from "../components/footer"
+import styled from 'styled-components'
+import NavBar from "../components/navbar"
 import { rhythm, scale } from "../utils/typography"
+
+const Wrapper = styled.div`
+ position: relative;
+ margin-left: auto;
+ margin-right: auto;
+ height: 100vh;
+ max-width: 100%;
+
+`
+
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -9,24 +21,7 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
+      <NavBar />
     )
   } else {
     header = (
@@ -50,22 +45,11 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <Wrapper>
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
+      <Footer />
+    </Wrapper>
   )
 }
 
