@@ -1,7 +1,7 @@
 import React from 'react'
 import { device } from './device'
 import { Link } from 'gatsby'
-import mainLogo from "../../content/assets/main-logo.jpg"
+import mainLogo from "../../content/assets/main-logo.svg"
 import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -15,15 +15,15 @@ const MenuButton = styled(Button)({
 const Container = styled.div`
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 30px, 10%;
-    background-color: white;
+    background-color: black;
     max-width: ${device.desktop};
     
 
 
-`
+`;
 const Logo = styled.img`
     src: url(${props => props.src});
     display: block;
@@ -50,12 +50,12 @@ export default function NavBar() {
     }
     return (
         <Container>
-            {/* <Link to={"/"}>
+            <Link to={"/"}>
                 <Logo src={mainLogo} alt='Convert to Smart'></Logo>
-            </Link> */}
-            <TempLogo>ConvertToSmart</TempLogo>
+            </Link>
+            {/* <TempLogo>ConvertToSmart</TempLogo> */}
             <ul>
-                <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>Menu</Button>
+                <MenuButton aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>Menu</MenuButton>
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEL}
