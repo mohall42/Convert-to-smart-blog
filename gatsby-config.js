@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Convert To Smart Blog`,
-    author: `Michael Hall`,
+    author: `Lola Barteck`,
     description: `Trader blog starter`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
@@ -14,6 +14,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/index`,
+        name: `content`,
       },
     },
     {
@@ -81,7 +88,16 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
+
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

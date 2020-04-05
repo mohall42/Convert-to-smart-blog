@@ -1,15 +1,25 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
-import { graphql } from 'graphql'
+
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 
-const Experience = (data) => {
+const Experience = () => {
+    const data = useStaticQuery(graphql`
+    query{
+        markdownRemark(frontmatter: {title: {eq: "Experience"} }){
+          html
+        }
+      }
+    `);
 
     return (
         <Grid container spacing={2}>
-            <Grid item xs={6}>Trading in my experience</Grid>
-            <Grid item xs={6}></Grid>
+            <Grid item xs={6}>
+                <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+
+            </Grid>
 
         </Grid>
     )
@@ -18,7 +28,3 @@ const Experience = (data) => {
 }
 
 export default Experience
-
-export const pageQuery = graphql`
-
-`;

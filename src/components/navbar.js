@@ -15,11 +15,13 @@ const MenuButton = styled(Button)({
 const Container = styled.div`
 
     display: flex;
+    position: relative;
+    top: 0;
     justify-content: space-around;
     align-items: center;
     padding: 30px, 10%;
     background-color: black;
-    max-width: ${device.desktop};
+    width: 100%;
     
 
 
@@ -29,13 +31,6 @@ const Logo = styled.img`
     display: block;
 `;
 
-const TempLogo = styled.h1`
-    margin: 0, 5%;
-    padding: 0;
-    color: blackj;
-    text-align: right;
-    cursor: pointer;
-`;
 
 
 export default function NavBar() {
@@ -50,9 +45,6 @@ export default function NavBar() {
     }
     return (
         <Container>
-            <Link to={"/"}>
-                <Logo src={mainLogo} alt='Convert to Smart'></Logo>
-            </Link>
             {/* <TempLogo>ConvertToSmart</TempLogo> */}
             <ul>
                 <MenuButton aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>Menu</MenuButton>
@@ -63,14 +55,18 @@ export default function NavBar() {
                     open={open}
                     onClose={handleClose}
                 >
-                    <MenuItem>Blogs</MenuItem>
-                    <MenuItem>Videos</MenuItem>
-                    <MenuItem>About Me</MenuItem>
-                    <MenuItem>Contact</MenuItem>
+                    <MenuItem><Link to="/blogs">Blog</Link></MenuItem>
+                    <MenuItem><Link to="/videos">Videos</Link></MenuItem>
+                    <MenuItem><Link to="/contact">Contact Me</Link></MenuItem>
 
                 </Menu>
             </ul>
 
+            <Link to="/aboutMe">About Me</Link>
+
+            <Link to={"/"}>
+                <Logo src={mainLogo} alt='Convert to Smart'></Logo>
+            </Link>
         </Container>
     )
 
