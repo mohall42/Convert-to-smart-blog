@@ -15,13 +15,14 @@ const Experience = () => {
     `);
 
     return (
-        <Grid container spacing={2}>
-            <Grid item xs={6}>
-                <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
-            </Grid>
+        <div>
+            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        </div>
 
-        </Grid>
+
+
+
     )
 
 

@@ -1,12 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
 import Footer from "../components/footer"
 import styled from 'styled-components'
 import NavBar from "../components/navbar"
 import Container from "@material-ui/core/Container"
-import { device } from "../components/device"
-import { rhythm, scale } from "../utils/typography"
 
+
+const StyledContainer = styled(Container)`
+
+  min-height: 85vh;
+
+`;
 
 
 const Wrapper = styled.div`
@@ -22,9 +25,9 @@ const Layout = (props) => {
 
     <>
       <NavBar />
-      <Container>
+      <StyledContainer>
         <div>{props.children}</div>
-      </Container>
+      </StyledContainer>
       <Footer />
     </>
   )

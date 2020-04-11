@@ -13,8 +13,6 @@ const Container = styled.div`
     background-color: black;
     height: 15%;
     width: 100%;
-    position: absolute;
-    bottom: 0;
     
 
     .logo{

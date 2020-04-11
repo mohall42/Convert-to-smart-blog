@@ -1,14 +1,19 @@
 import React from 'react'
-import { device } from './device'
 import { Link } from 'gatsby'
-import mainLogo from "../../content/assets/main-logo.svg"
+import mainLogo from "../../content/assets/main-logo.png"
 import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import styled from 'styled-components'
 
+const StyledLink = styled(Link)`
+   box-shadow: none;
+   color: black;
+
+`;
+
 const MenuButton = styled(Button)({
-    color: 'white'
+    color: 'black'
 
 });
 
@@ -20,8 +25,9 @@ const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     padding: 30px, 10%;
-    background-color: black;
+  ${'' /*   background-color: black; */}
     width: 100%;
+    margin-bottom: 2%;
     
 
 
@@ -45,7 +51,9 @@ export default function NavBar() {
     }
     return (
         <Container>
-            {/* <TempLogo>ConvertToSmart</TempLogo> */}
+            <StyledLink to={"/"}>
+                <Logo src={mainLogo} alt='Convert to Smart'></Logo>
+            </StyledLink>
             <ul>
                 <MenuButton aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>Menu</MenuButton>
                 <Menu
@@ -55,18 +63,15 @@ export default function NavBar() {
                     open={open}
                     onClose={handleClose}
                 >
-                    <MenuItem><Link to="/blogs">Blog</Link></MenuItem>
-                    <MenuItem><Link to="/videos">Videos</Link></MenuItem>
-                    <MenuItem><Link to="/contact">Contact Me</Link></MenuItem>
+                    <MenuItem><StyledLink to="/aboutMe">About Me</StyledLink></MenuItem>
+                    <MenuItem><StyledLink to="/blogs">Blog</StyledLink></MenuItem>
+                    <MenuItem><StyledLink to="/videos">Videos</StyledLink></MenuItem>
+                    <MenuItem><StyledLink to="/contact">Contact Me</StyledLink></MenuItem>
 
                 </Menu>
             </ul>
 
-            <Link to="/aboutMe">About Me</Link>
 
-            <Link to={"/"}>
-                <Logo src={mainLogo} alt='Convert to Smart'></Logo>
-            </Link>
         </Container>
     )
 
