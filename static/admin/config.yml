@@ -15,6 +15,17 @@ collections:
      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "videos"
+    label: "Videos"
+    folder: "content/videos"
+    create: true
+    editor: 
+      preview: false
+    fields:
+     - { label: "Title", name: "title", widget: "string" }
+     - { label: "Link", name: "link", widget: "string" }
+     - { label: "Body", name: "body", widget: "markdown" }
