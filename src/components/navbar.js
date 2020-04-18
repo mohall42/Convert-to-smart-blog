@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import styled from 'styled-components'
+import MenuIcon from "../../content/assets/menu.svg"
 
 const StyledLink = styled(Link)`
    box-shadow: none;
@@ -39,6 +40,8 @@ const Logo = styled.img`
 
 
 
+
+
 export default function NavBar() {
     const [anchorEL, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEL);
@@ -55,7 +58,7 @@ export default function NavBar() {
                 <Logo src={mainLogo} alt='Convert to Smart'></Logo>
             </StyledLink>
             <ul>
-                <MenuButton aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>Menu</MenuButton>
+                <MenuButton aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}><Logo src={MenuIcon}></Logo></MenuButton>
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEL}
