@@ -36,6 +36,7 @@ const Container = styled.div`
 const Logo = styled.img`
     src: url(${props => props.src});
     display: block;
+    margin-top:2px;
 `;
 
 

@@ -8,16 +8,12 @@ import Container from "@material-ui/core/Container"
 const StyledContainer = styled(Container)`
 
   min-height: 85vh;
+  
 
 `;
 
 
-const Wrapper = styled.div`
- height: 100%;
- display: flex;
- flex-direction: column;
- 
-`
+
 
 const Layout = (props) => {
 
@@ -25,9 +21,9 @@ const Layout = (props) => {
 
     <>
       <NavBar />
-      <StyledContainer>
-        <div>{props.children}</div>
-      </StyledContainer>
+
+      <div>{props.children}</div>
+
       <Footer />
     </>
   )
